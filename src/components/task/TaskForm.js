@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css'
 
+// <CreateNewTask> & <TaskContainer> will call this component
 const TaskForm = ({ handleSubmit, inputValue, handleChange, formButtonText }) => {
   return (
     <div>

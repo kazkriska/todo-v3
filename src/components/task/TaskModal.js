@@ -20,7 +20,7 @@ const TaskModal = ({taskData, taskOptions}) => {
       <button onClick={show}>Edit</button>
       <Rodal visible={visibile} onClose={hide}>
         <h3>Todo Properties</h3>
-        <TaskPropertiesForm taskData={taskData} />
+        <TaskPropertiesForm taskData={taskData} taskOptions={taskOptions} closeOnSubmit={hide} />
       </Rodal>
     </div>
   );

@@ -1,6 +1,6 @@
 import Column from './components/Column';
 import React, { useState } from 'react';
-import './App.css'
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -18,9 +18,15 @@ function App() {
       setTodos(filteredTodos);
     },
     editTodoTask(id, newTaskValue) {
-      const todoToUpdate = taskOptions.findTodo(id)
+      const todoToUpdate = taskOptions.findTodo(id);
       if (todoToUpdate) {
         todoToUpdate.task = newTaskValue;
+      }
+    },
+    editTodoCategory(id, newCategory) {
+      const todoToUpdate = taskOptions.findTodo(id);
+      if (todoToUpdate) {
+        todoToUpdate.category = newCategory;
       }
     },
   };
