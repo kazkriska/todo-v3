@@ -23,7 +23,7 @@ function App() {
     },
   };
 
-  console.log(todos); //for testing, remove later
+  console.table(todos); //for testing, remove later
   return (
     <div className="kanban-board">
       <Column category={'today'} todos={todos} taskOptions={taskOptions} />
