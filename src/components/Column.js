@@ -2,7 +2,7 @@ import React from 'react'
 
 const Column = ({children}) => {
   return (
-    <div>
+    <div className='column'>
         {children}
     </div>
   )
