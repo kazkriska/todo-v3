@@ -14,6 +14,12 @@ function App() {
       const filteredTodos = todos.filter((todo) => todo.id !== id);
       setTodos(filteredTodos);
     },
+    editTodo(id, newTaskValue) {
+      const todoToUpdate = todos.find((todo) => todo.id === id);
+      if (todoToUpdate) {
+        todoToUpdate.task = newTaskValue;
+      }
+    },
   };
 
   console.log(todos); //for testing, remove later

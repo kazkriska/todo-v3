@@ -3,15 +3,11 @@ import NewTaskBtn from './NewTaskBtn';
 import TaskForm from './TaskForm';
 import { v4 as uuidv4 } from 'uuid';
 
-
-const CreateNewTask = ({taskOptions: {addTodo}}) => {
+const CreateNewTask = ({ taskOptions: { addTodo } }) => {
   const [clicked, setClicked] = useState(false);
   const [input, setInput] = useState('');
-
-  const handleClick = () => {
-    setClicked((state) => !state);
-  };
-
+ 
+  //Handles adding new Task
   const handleSubmit = (e) => {
     e.preventDefault();
     const trimmedInput = input.trim();
@@ -29,14 +25,15 @@ const CreateNewTask = ({taskOptions: {addTodo}}) => {
 
   return (
     <div>
-      {!clicked ? (
-        <NewTaskBtn handleClick={handleClick} />
-      ) : (
+      {/* if clicked is TRUE then show TaskForm else show NewTaskButton  */}
+      {clicked ? (
         <TaskForm
           inputValue={input}
           handleChange={(e) => setInput(e.target.value)}
           handleSubmit={handleSubmit}
         />
+      ) : (
+        <NewTaskBtn handleClick={() => setClicked((state) => !state)} />
       )}
     </div>
   );
