@@ -1,7 +1,6 @@
 import Column from './components/Column';
 import React, { useState } from 'react';
 import CreateNewTask from './components/task/CreateNewTask';
-//import TaskDisplay from './components/task/TaskDisplay';
 import TaskContainer from './components/task/TaskContainer';
 
 function App() {
