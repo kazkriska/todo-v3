@@ -1,7 +1,7 @@
 import Column from './components/Column';
 import React, { useState } from 'react';
-import CreateNewTask from './components/task/CreateNewTask';
-import TaskContainer from './components/task/TaskContainer';
+//import CreateNewTask from './components/task/CreateNewTask';
+//import TaskContainer from './components/task/TaskContainer';
 import './App.css'
 
 function App() {
@@ -26,22 +26,10 @@ function App() {
   console.log(todos); //for testing, remove later
   return (
     <div className="kanban-board">
-      <Column category={'today'} >
-        {todos.map((todo) => (
-          <TaskContainer
-            taskData={todo}
-            key={todo.id}
-            taskOptions={taskOptions}
-          />
-        ))}
-        <CreateNewTask taskOptions={taskOptions} />
-      </Column>
-      <Column category={'week'} >
-      <CreateNewTask taskOptions={taskOptions} />
-      </Column>
-      <Column category={'month'} ></Column>
-      <Column category={'dumpster'} >
-      </Column>
+      <Column category={'today'} todos={todos} taskOptions={taskOptions} />
+      <Column category={'week'} todos={todos} taskOptions={taskOptions} />
+      <Column category={'month'} todos={todos} taskOptions={taskOptions} />
+      <Column category={'dumpster'} todos={todos} taskOptions={taskOptions} />
     </div>
   );
 }
