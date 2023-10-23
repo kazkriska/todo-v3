@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
+import TaskPropertiesForm from './TaskPropertiesForm';
 
 // <TaskDisplay> will call this component and pass props to it
 const TaskModal = ({taskData, taskOptions}) => {
@@ -19,7 +20,7 @@ const TaskModal = ({taskData, taskOptions}) => {
       <button onClick={show}>Edit</button>
       <Rodal visible={visibile} onClose={hide}>
         <h3>Todo Properties</h3>
-        <button onClick={hide}>Save Changes</button> {/* change onclick=hide to handleSaveEdit later */}
+        <TaskPropertiesForm taskData={taskData} />
       </Rodal>
     </div>
   );
