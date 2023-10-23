@@ -6,14 +6,14 @@ const TaskContainer = ({ taskData, taskOptions }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [input, setInput] = useState(taskData.task);
 
-  const { deleteTodo, editTodo } = taskOptions;
+  const { deleteTodo, editTodoTask } = taskOptions;
 
   //handles editing existing task
   const handleSubmit = (e) => {
     e.preventDefault();
     const trimmedInput = input.trim();
     if (trimmedInput) {
-      editTodo(taskData.id, input);
+      editTodoTask(taskData.id, input);
       setIsEditing((state) => !state);
     }
   };
