@@ -13,7 +13,10 @@ const TaskPropertiesForm = ({taskData}) => {
                     <option value='month'>Month</option>
                     <option value='dumpster'>Dumpster</option>
                 </select>
+                
             </fieldset>
+            <br />
+            <button type='button'>Save</button>
         </form>
     </div>
   )
