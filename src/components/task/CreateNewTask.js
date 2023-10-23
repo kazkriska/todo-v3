@@ -3,7 +3,7 @@ import NewTaskBtn from './NewTaskBtn';
 import TaskForm from './TaskForm';
 import { v4 as uuidv4 } from 'uuid';
 
-const CreateNewTask = ({ taskOptions: { addTodo } }) => {
+const CreateNewTask = ({ category, taskOptions: { addTodo } }) => {
   const [clicked, setClicked] = useState(false);
   const [input, setInput] = useState('');
  
@@ -16,6 +16,7 @@ const CreateNewTask = ({ taskOptions: { addTodo } }) => {
         id: uuidv4(),
         task: input,
         dateCreated: new Date().toLocaleString(),
+        category: category
       };
       addTodo(todo);
       setInput('');
