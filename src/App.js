@@ -1,14 +1,15 @@
-// JavaScript Imports
 import Column from './components/Column';
 import React, { useState } from 'react';
-
-// Style Imports
-import './App.css'
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   const taskOptions = {
+    findTodo(id) {
+      const todoToUpdate = todos.find((todo) => todo.id === id);
+      return todoToUpdate;
+    },
     addTodo(todo) {
       setTodos([...todos, todo]);
     },
@@ -17,9 +18,15 @@ function App() {
       setTodos(filteredTodos);
     },
     editTodoTask(id, newTaskValue) {
-      const todoToUpdate = todos.find((todo) => todo.id === id);
+      const todoToUpdate = taskOptions.findTodo(id);
       if (todoToUpdate) {
         todoToUpdate.task = newTaskValue;
+      }
+    },
+    editTodoCategory(id, newCategory) {
+      const todoToUpdate = taskOptions.findTodo(id);
+      if (todoToUpdate) {
+        todoToUpdate.category = newCategory;
       }
     },
   };

@@ -1,12 +1,19 @@
 import React from 'react';
+import TaskModal from './TaskModal';
 
-const TaskDisplay = ({ taskData, deleteTodo, handleDoubleClick }) => {
+// <TaskContainer> will call this component and pass it props
+const TaskDisplay = ({ taskData, taskOptions, handleDoubleClick }) => {
+  const { deleteTodo } = taskOptions;
   return (
-    <div className="std-box-component solid-border" onDoubleClick={handleDoubleClick}>
+    <div
+      className="std-box-component solid-border"
+      onDoubleClick={handleDoubleClick}
+    >
       <p className="text-defaultRegular">{taskData.task}</p>
-      <button style={{ marginLeft: 8 }} onClick={() => deleteTodo(taskData.id)}>
+      <button style={{ marginLeft: 8, marginRight: 4 }} onClick={() => deleteTodo(taskData.id)}>
         Delete
       </button>
+      <TaskModal taskData={taskData} taskOptions={taskOptions} />
     </div>
   );
 };
