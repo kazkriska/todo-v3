@@ -21,12 +21,14 @@ function App() {
       const todoToUpdate = taskOptions.findTodo(id);
       if (todoToUpdate) {
         todoToUpdate.task = newTaskValue;
+        setTodos([...todos])
       }
     },
     editTodoCategory(id, newCategory) {
       const todoToUpdate = taskOptions.findTodo(id);
       if (todoToUpdate) {
         todoToUpdate.category = newCategory;
+        setTodos([...todos])
       }
     },
   };
