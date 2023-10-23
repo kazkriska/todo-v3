@@ -31,6 +31,7 @@ const CreateNewTask = ({ taskOptions: { addTodo } }) => {
           inputValue={input}
           handleChange={(e) => setInput(e.target.value)}
           handleSubmit={handleSubmit}
+          formButtonText={'Add'}
         />
       ) : (
         <NewTaskBtn handleClick={() => setClicked((state) => !state)} />

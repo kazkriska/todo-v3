@@ -36,7 +36,9 @@ function App() {
         ))}
         <CreateNewTask taskOptions={taskOptions} />
       </Column>
-      <Column category={'week'} ></Column>
+      <Column category={'week'} >
+      <CreateNewTask taskOptions={taskOptions} />
+      </Column>
       <Column category={'month'} ></Column>
       <Column category={'dumpster'} ></Column>
     </div>

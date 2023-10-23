@@ -25,6 +25,7 @@ const TaskContainer = ({ taskData, taskOptions }) => {
           handleSubmit={handleSubmit}
           inputValue={input}
           handleChange={(e) => setInput(e.target.value)}
+          formButtonText={'Submit'}
         />
       ) : (
         <TaskDisplay

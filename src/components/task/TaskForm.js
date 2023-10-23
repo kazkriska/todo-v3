@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style.css'
 
-const TaskForm = ({ handleSubmit, inputValue, handleChange }) => {
+const TaskForm = ({ handleSubmit, inputValue, handleChange, formButtonText }) => {
   return (
     <div>
       <div className="std-box-component solid-border">
@@ -15,7 +15,7 @@ const TaskForm = ({ handleSubmit, inputValue, handleChange }) => {
             placeholder="Type here..."
             autoFocus
           />
-          <button type="submit">Add</button>
+          <button type="submit">{formButtonText}</button>
         </form>
       </div>
     </div>
