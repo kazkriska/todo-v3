@@ -1,6 +1,8 @@
 import Column from './components/Column';
 import React, { useState } from 'react';
 import CreateNewTask from './components/task/CreateNewTask';
+//import TaskDisplay from './components/task/TaskDisplay';
+import TaskContainer from './components/task/TaskContainer';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -18,6 +20,13 @@ function App() {
   console.log(todos); //for testing, remove later
   return (
     <Column>
+      {todos.map((todo) => (
+        <TaskContainer
+          taskData={todo}
+          key={todo.id}
+          taskOptions={taskOptions}
+        />
+      ))}
       <CreateNewTask taskOptions={taskOptions} />
     </Column>
   );
