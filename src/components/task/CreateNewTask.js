@@ -16,7 +16,8 @@ const CreateNewTask = ({ category, taskOptions: { addTodo } }) => {
         id: uuidv4(),
         task: input,
         dateCreated: new Date().toLocaleString(),
-        category: category
+        category: category,
+        dueDate: ''
       };
       addTodo(todo);
       setInput('');

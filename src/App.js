@@ -31,6 +31,13 @@ function App() {
         setTodos([...todos])
       }
     },
+    editTodoDueDate(id, newDueDate) {
+      const todoToUpdate = taskOptions.findTodo(id);
+      if(todoToUpdate) {
+        todoToUpdate.dueDate = newDueDate;
+        setTodos([...todos])
+      }
+    }
   };
 
   console.table(todos); //for testing, remove later
