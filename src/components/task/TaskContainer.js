@@ -6,7 +6,7 @@ const TaskContainer = ({ taskData, taskOptions }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [input, setInput] = useState(taskData.task);
 
-  const { deleteTodo, editTodoTask } = taskOptions;
+  const { editTodoTask } = taskOptions;
 
   //handles editing existing task
   const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ const TaskContainer = ({ taskData, taskOptions }) => {
       ) : (
         <TaskDisplay
           taskData={taskData}
-          deleteTodo={deleteTodo}
+          taskOptions={taskOptions}
           handleDoubleClick={() => setIsEditing((state) => !state)}
         />
       )}

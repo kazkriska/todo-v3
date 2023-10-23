@@ -1,8 +1,5 @@
-// JavaScript Imports
 import Column from './components/Column';
 import React, { useState } from 'react';
-
-// Style Imports
 import './App.css'
 
 function App() {
