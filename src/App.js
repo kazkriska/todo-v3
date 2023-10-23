@@ -40,7 +40,8 @@ function App() {
       <CreateNewTask taskOptions={taskOptions} />
       </Column>
       <Column category={'month'} ></Column>
-      <Column category={'dumpster'} ></Column>
+      <Column category={'dumpster'} >
+      </Column>
     </div>
   );
 }
